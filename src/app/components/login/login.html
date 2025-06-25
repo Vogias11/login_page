@@ -1,0 +1,7 @@
+<form>
+    <input #emailInput type="email" placeholder="Email Adrress" ><br><br>
+    <input #passInput type="password" placeholder="Password" >
+</form>
+
+<button (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
+<a routerLink="/">Back</a>

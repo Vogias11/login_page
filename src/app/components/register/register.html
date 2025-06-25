@@ -1,0 +1,10 @@
+<input #emailInput type="email" placeholder="Email">
+<input #pass1Input type="password" placeholder="Password">
+<input #pass2Input type="password" placeholder="Confirm Password">
+<button (click)="registerForm(emailInput.value, pass1Input.value, pass2Input.value)">Register</button><br>
+<a routerLink="/">Back</a>
+
+<p *ngIf="successfulReg" style="color: green;">Registration Successful!</p>
+<p *ngIf="!successfulReg && password1 !== password2" style="color: red;">
+  Passwords do not match.
+</p>
