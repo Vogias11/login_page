@@ -5,3 +5,6 @@
 
 <button (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
 <a routerLink="/">Back</a>
+
+<p *ngIf="submited && successfulLog" style="color: green;">Login Successful!</p>
+<p *ngIf="submited && !successfulLog" style="color: red;"> Passwords do not match.</p>

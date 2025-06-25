@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { JsonCreator } from '../../services/json-creator';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule,RouterLink], // enables *ngIf, *ngFor, etc.
+  imports: [CommonModule, RouterLink],
   templateUrl: './register.html',
   styleUrls: ['./register.scss']
 })
@@ -15,12 +16,28 @@ export class Register {
   password2: string = '';
   successfulReg: boolean = false;
 
-  registerForm(email: string, pass1: string, pass2: string): boolean {
-    this.email = email;
-    this.password1 = pass1;
-    this.password2 = pass2;
+  private jsonCreator = inject(JsonCreator);
 
-    this.successfulReg = pass1 === pass2;
-    return this.successfulReg;
+registerForm(email: string, pass1: string, pass2: string): boolean {
+  this.email = email;
+  this.password1 = pass1;
+  this.password2 = pass2;
+
+  this.successfulReg = pass1 === pass2;
+
+  // ✅ Only create/download JSON if registration is successful
+  if (this.successfulReg) {
+    this.jsonCreator.createAndDownloadJson(this.email, this.password1);
+  }
+
+  return this.successfulReg;
+}
+
+  onSubmitJson() {
+    if (this.successfulReg) {
+      this.jsonCreator.createAndDownloadJson(this.email, this.password1);
+    } else {
+      console.warn('Form is invalid — JSON not created');
+    }
   }
 }
