@@ -1,0 +1,52 @@
+.div-home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;        
+}
+
+.home-buttons {
+    border-radius: 10px;
+    padding: 10px 24px;
+    transition-duration: 0.2s;
+    background-color: whitesmoke;
+    color: black;
+    border: 0px;
+    width: 15%;
+}
+.home-buttons:hover {
+    background-color: rgb(91, 133, 91);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.title {
+    margin: 0;
+    margin-bottom: -5px;
+    border-radius: 20px;
+}
+
+h2 {
+    transition-duration: 0.8s;
+    width: fit-content;
+    background-color: cadetblue;
+    padding: 4px 8px;
+}
+h2:hover{
+    transition-duration: 0.8s;
+    padding: 14px 18px;
+}
+
+h4 {
+    transition: margin-left 0.8s;
+    width: fit-content;
+    background-color: rgb(224, 119, 0);
+    padding: 4px 8px;
+}
+h4:hover {
+    transition: margin-left 0.8s;
+    margin-left: 25px;
+}
+

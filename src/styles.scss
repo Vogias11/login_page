@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+button {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
+    border: 0px;
+    transition-duration: 0.2s;
+    margin-left: 15px;
+    
+}
+button:hover {
+    background-color: rgb(91, 133, 91);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.back-button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    border: 0;
+    margin: 15px;
+}
+.back-button:hover {
+    background-color: rgb(91, 133, 91);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin-left: 10px;
+}
+input {
+    margin:  0;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 0px;
+    box-shadow: 0 0 10px rgba($color: #8f8f8f, $alpha: 0.5);
+    padding: 4px 8px;
+
+}
+input {
+  transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+input:hover,
+input:focus {
+  background-color: rgb(91, 133, 91);
+  box-shadow: 0 5px #bababa;
+}
+
+input:hover::placeholder,
+input:focus::placeholder {
+  color: white;
+}

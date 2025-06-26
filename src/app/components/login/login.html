@@ -1,10 +1,11 @@
+<button class="back-button" routerLink="/">&lt;</button>
 <form>
     <input #emailInput type="email" placeholder="Email Adrress" ><br><br>
     <input #passInput type="password" placeholder="Password" ><br><br>
 </form>
 
-<button (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
-<a routerLink="/">Back</a>
+<button class= 'login-button'(click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
+
 
 <p *ngIf="submited && successfulLog" style="color: green;">Login Successful!</p>
 <p *ngIf="submited && !successfulLog" style="color: red;"> Passwords do not match.</p>
