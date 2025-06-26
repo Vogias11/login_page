@@ -1,15 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [CommonModule,RouterLink],
  templateUrl: './login.html', 
   styleUrl: './login.scss'
 })
+
 export class Login {
+ constructor(private router: Router) {} 
 
    email: string ="";
    password: string ="";
@@ -27,6 +30,12 @@ export class Login {
     const userFound = data.find((u: any) => u.email === this.email && u.password === this.password);
 
     this.successfulLog = userFound;
+    
+
+    if (this.successfulLog){
+      this.router.navigate(['/add-customer']);
+    }
     return this.successfulLog;
   }
+  
 }

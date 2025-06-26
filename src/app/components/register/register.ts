@@ -25,9 +25,9 @@ registerForm(email: string, pass1: string, pass2: string): boolean {
 
   this.successfulReg = pass1 === pass2;
 
-  // ✅ Only create/download JSON if registration is successful
+  //Only create JSON if registration is successful
   if (this.successfulReg) {
-    this.jsonCreator.createAndDownloadJson(this.email, this.password1);
+    this.jsonCreator.createJson(this.email, this.password1);
   }
 
   return this.successfulReg;
@@ -35,7 +35,7 @@ registerForm(email: string, pass1: string, pass2: string): boolean {
 
   onSubmitJson() {
     if (this.successfulReg) {
-      this.jsonCreator.createAndDownloadJson(this.email, this.password1);
+      this.jsonCreator.createJson(this.email, this.password1);
     } else {
       console.warn('Form is invalid — JSON not created');
     }

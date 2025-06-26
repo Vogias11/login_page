@@ -27,4 +27,12 @@ export const routes: Routes = [{
             )
         },
     },
+    {
+        path: 'add-customer',
+        loadComponent: () => {
+            return import('./components/add-customer/add-customer').then(
+                m => m.AddCustomer
+            )
+        }
+    }
 ];

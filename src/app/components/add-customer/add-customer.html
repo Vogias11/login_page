@@ -1,0 +1,40 @@
+<button class="back-button" routerLink="/">&lt;</button>
+
+<div>
+ <form #customerForm="ngForm">
+    <!-- ID -->
+    <label for="id">ID</label>
+    <input type="number" id="id" name="id" [(ngModel)]="customer.id" required>
+
+    <!-- First Name -->
+    <label for="firstName">First Name</label>
+    <input #firstNameInput type="text" id="firstName" name="firstName" [(ngModel)]="customer.firstName" required>
+
+    <!-- Last Name -->
+    <label for="lastName">Last Name</label>
+    <input #lastNameInput type="text" id="lastName" name="lastName" [(ngModel)]="customer.lastName" required>
+
+    <!-- Telephone -->
+    <label for="tel">Telephone</label>
+    <input #telInput type="number" id="tel" name="tel" [(ngModel)]="customer.tel" required>
+
+    <!-- Birth Date -->
+    <label for="birthDate">Birth Date</label>
+    <input #birthDateInput type="date" id="birthDate" name="birthDate" [(ngModel)]="customer.birthDate" required>
+
+    <!-- Father Name -->
+    <label for="fatherName">Father's Name</label>
+    <input #fatherNameInput type="text" id="fatherName" name="fatherName" [(ngModel)]="customer.fatherName" required>
+
+    <!-- Mother Name -->
+    <label for="motherName">Mother's Name</label>
+    <input #motherNameInput type="text" id="motherName" name="motherName" [(ngModel)]="customer.motherName" required>
+
+    <!-- Class -->
+    <label for="class">Class</label>
+    <input #classInput type="number" id="class" name="class" [(ngModel)]="customer.class" required>
+
+    <!-- Submit Button -->
+    <button type="button" (click)="onSubmit()" >Submit</button>
+  </form>
+</div>

@@ -1,17 +1,21 @@
-button {
+.ui-button {
     border-radius: 10px;
     background-color: whitesmoke;
     color: black;
     border: 0px;
     transition-duration: 0.2s;
     margin-left: 15px;
+    padding: 10px 24px;
+    width: 15%;
     
 }
-button:hover {
+.ui-button:hover {
     background-color: rgb(91, 133, 91);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+    padding: 15px 29px;
+    width: 17%; 
+  }
 .back-button {
     width: 30px;
     height: 30px;
@@ -19,6 +23,7 @@ button:hover {
     border-radius: 50%;
     border: 0;
     margin: 15px;
+    margin-bottom: 5px;
 }
 .back-button:hover {
     background-color: rgb(91, 133, 91);
@@ -33,10 +38,12 @@ input {
     border: 0px;
     box-shadow: 0 0 10px rgba($color: #8f8f8f, $alpha: 0.5);
     padding: 4px 8px;
+    color: white;
 
 }
 input {
   transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+  color: black;
 }
 
 input:hover,
@@ -48,4 +55,16 @@ input:focus {
 input:hover::placeholder,
 input:focus::placeholder {
   color: white;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: fit-content;
+
+}
+form input {
+    margin: 10px;
 }
