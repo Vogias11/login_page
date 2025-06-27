@@ -1,11 +1,9 @@
-<button class="back-button" routerLink="/">&lt;</button>
-
 <form>
   <input #emailInput type="email" placeholder="Email Address" />
   <input #passInput type="password" placeholder="Password" />
 </form>
 
-<button class="ui-button" (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
+<button class="login-button" (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
 
 <!-- SUCCESS MESSAGE -->
 <p *ngIf="submitted && successfulLog" style="color: green;">

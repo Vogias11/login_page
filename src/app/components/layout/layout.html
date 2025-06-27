@@ -1,12 +1,19 @@
-<nav class="navbar" *ngIf="isLoggedIn" >
-  <a routerLink="/" routerLinkActive="active">Home</a>
-  <a routerLink="/add-customer" routerLinkActive="active">Add Customer</a>
-  <a routerLink="/customers-table" routerLinkActive="active">Customer List</a>
-</nav>
-<nav class="navbar" *ngIf="!isLoggedIn">
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/login" routerLinkActive="active">Login</a>
-    <a routerLink="/register" routerLinkActive="active">Register</a>
-</nav>
+<div class="header-container">
+  <div class="titles">
+    <h2 class="title" routerLink="/">Fishing.org</h2>
+    <h4 class="title">Don't worry it's safe</h4>
+  </div>
+
+  <nav class="navbar" *ngIf="isLoggedIn">
+    <button  routerLink="/add-customer" routerLinkActive="active">Add Customer</button>
+    <button  routerLink="/customers-table" routerLinkActive="active">Customer List</button>
+    <button  (click)="onLogOut()" routerLink="/" routerLinkActive="active">Log Out</button>
+  </nav>
+  
+  <nav class="navbar" *ngIf="!isLoggedIn">
+    <button  routerLink="/login" routerLinkActive="active">Login</button>
+    <button  routerLink="/register" routerLinkActive="active">Register</button>
+  </nav>
+</div>
 
 <router-outlet></router-outlet>

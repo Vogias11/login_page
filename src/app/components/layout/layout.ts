@@ -21,4 +21,7 @@ export class Layout implements OnInit {
       this.isLoggedIn = status;
     });
   }
+  onLogOut(){
+    this.isLoggedIn = false;
+  }
 }
