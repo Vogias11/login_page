@@ -33,6 +33,14 @@ export const routes: Routes = [{
             return import('./components/add-customer/add-customer').then(
                 m => m.AddCustomer
             )
+        },
+    },
+    {
+    path: 'customers-table',
+        loadComponent: () => {
+            return import('./components/customers-table/customers-table').then(
+                m => m.CustomersTable
+            )
         }
     }
-];
+]

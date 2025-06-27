@@ -34,7 +34,8 @@
     <label for="class">Class</label>
     <input #classInput type="number" id="class" name="class" [(ngModel)]="customer.class" required>
 
-    <!-- Submit Button -->
-    <button type="button" (click)="onSubmit()" >Submit</button>
   </form>
+      <!-- Submit Button -->
+  <button class="ui-button" type="button" routerLink="./customers-table" (click)="onSubmit()" >Submit</button>
+
 </div>
