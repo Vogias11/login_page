@@ -1,0 +1,12 @@
+<nav class="navbar" *ngIf="isLoggedIn" >
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/add-customer" routerLinkActive="active">Add Customer</a>
+  <a routerLink="/customers-table" routerLinkActive="active">Customer List</a>
+</nav>
+<nav class="navbar" *ngIf="!isLoggedIn">
+    <a routerLink="/" routerLinkActive="active">Home</a>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/register" routerLinkActive="active">Register</a>
+</nav>
+
+<router-outlet></router-outlet>

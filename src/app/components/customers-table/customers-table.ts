@@ -1,21 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-customers-table',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './customers-table.html',
-  styleUrl: './customers-table.scss'
+  styleUrls: ['./customers-table.scss']
 })
-export class CustomersTable {
+export class CustomersTable implements OnInit {
+  jsonCustomerData: any[] = [];
 
-  jsonCustomerData: any = [];
-
-ngOnInit() {
-  const data = localStorage.getItem('Customer Data');
-  if (data) {
-    this.jsonCustomerData = JSON.parse(data);
+  ngOnInit() {
+    const data = localStorage.getItem('Customer Data');
+    if (data) {
+      this.jsonCustomerData = JSON.parse(data);
+    }
   }
-}
-
 }

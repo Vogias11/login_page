@@ -1,5 +1,61 @@
-<ul>
-  <li *ngFor="let customer of jsonCustomerData">
-    {{ customer.firstName }} {{ customer.lastName }} - Tel: {{ customer.tel }}
-  </li>
-</ul>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Πελάτες</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 800px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Λίστα Πελατών</h2>
+  <table id="customers-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Όνομα</th>
+        <th>Επώνυμο</th>
+        <th>Τηλέφωνο</th>
+        <th>Ημ. Γέννησης</th>
+        <th>Όνομα Πατέρα</th>
+        <th>Όνομα Μητέρας</th>
+        <th>Τάξη</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let customer of jsonCustomerData">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.tel }}</td>
+        <td>{{ customer.birthDate | date:'dd/MM/yyyy' }}</td>
+        <td>{{ customer.fatherName }}</td>
+        <td>{{ customer.motherName }}</td>
+        <td>{{ customer.clasS }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>

@@ -1,11 +1,18 @@
 <button class="back-button" routerLink="/">&lt;</button>
+
 <form>
-    <input #emailInput type="email" placeholder="Email Adrress" >
-    <input #passInput type="password" placeholder="Password" >
+  <input #emailInput type="email" placeholder="Email Address" />
+  <input #passInput type="password" placeholder="Password" />
 </form>
 
-<button class= 'ui-button'(click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
+<button class="ui-button" (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
 
+<!-- SUCCESS MESSAGE -->
+<p *ngIf="submitted && successfulLog" style="color: green;">
+  Login Successful!
+</p>
 
-<p *ngIf="submited && successfulLog" routerLink="./add-customer" style="color: green;">Login Successful!</p>
-<p *ngIf="submited && !successfulLog" style="color: red;"> Passwords do not match.</p>
+<!-- ERROR MESSAGE -->
+<p *ngIf="submitted && !successfulLog" style="color: red;">
+  Email or password is incorrect.
+</p>

@@ -1,0 +1,13 @@
+.navbar {
+  background: whitesmoke;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.navbar a {
+  color: black;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+.navbar a.active {
+  text-decoration: underline;
+}
