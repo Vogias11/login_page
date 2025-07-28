@@ -1,3 +1,5 @@
+
+import 'zone.js';
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -6,6 +8,8 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { environment } from './app/environments/environments';
+
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 

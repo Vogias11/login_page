@@ -1,10 +1,8 @@
-<form>
-  <input #emailInput type="email" placeholder="Email Address" />
-  <input #passInput type="password" placeholder="Password" />
+<form (ngSubmit)="loginForm(email, password)">
+  <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
+  <button type="submit">Login</button>
 </form>
-
-<button class="login-button" (click)="loginForm(emailInput.value, passInput.value)">Login</button><br>
-
 <!-- SUCCESS MESSAGE -->
 <p *ngIf="submitted && successfulLog" style="color: green;">
   Login Successful!
